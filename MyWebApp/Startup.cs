@@ -3,8 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
+using WebService;
 
 namespace MyWebApp
 {
@@ -27,11 +30,19 @@ namespace MyWebApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<DataContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
+
+            services.AddSwaggerGen(x => x.SwaggerDoc("v1", new Info { Title = "Core API", Description = "Swagger Core API" }));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+           
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -45,12 +56,17 @@ namespace MyWebApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            app.UseMvc();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller}/{action=Index}/{id?}");
+            //});
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+            app.UseSwagger();
+            app.UseSwaggerUI(x => {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API");
             });
 
             app.UseSpa(spa =>
@@ -65,6 +81,8 @@ namespace MyWebApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+          
         }
     }
 }
