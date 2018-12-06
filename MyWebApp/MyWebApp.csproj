@@ -27,6 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\package-lock.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WebServices\WebServices.csproj" />
   </ItemGroup>
 
