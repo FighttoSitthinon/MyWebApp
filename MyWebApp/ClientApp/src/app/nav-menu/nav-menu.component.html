@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>My Web App</a>
+            <a class='navbar-brand' [routerLink]='["/"]'>This is Fightto - Kun Website :)</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
@@ -19,12 +19,17 @@
             </li>
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/profile"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-user'></span> My Profile
+                <span class='glyphicon glyphicon-user'></span> Profile
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/work-exp"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-education'></span> My Work Experience
+                <span class='glyphicon glyphicon-education'></span> Work Experience
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/skill"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-pushpin'></span> Skill
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
@@ -32,6 +37,7 @@
                 <span class='glyphicon glyphicon-send'></span> Contact
               </a>
             </li>
+
             <!--<li [routerLinkActive]='["link-active"]'>
     <a [routerLink]='["/counter"]' (click)='collapse()'>
       <span class='glyphicon glyphicon-education'></span> Counter

@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { WorkExpComponent } from './work-exp/work-exp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
+import { SkillComponent } from './skills/skill.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactComponent } from './contact/contact.component';
     FetchDataComponent,
     WorkExpComponent,
     ProfileComponent,
-    ContactComponent
+    ContactComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,11 +32,10 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      //{ path: 'counter', component: CounterComponent },
-      //{ path: 'fetch-data', component: FetchDataComponent },
       { path: 'work-exp', component: WorkExpComponent },
       { path: 'profile', component: ProfileComponent },
-      { path: 'contact', component: ContactComponent}
+      { path: 'contact', component: ContactComponent },
+      { path: 'skill', component: SkillComponent }
     ])
   ],
   providers: [],

@@ -22,7 +22,7 @@ namespace WebServices.Services
 
         public List<ContentModel> GetAllContent()
         {
-            var results = _ctx.Content.Select(x => new ContentModel() { Key = x.Key, Value = x.Value }).ToList();
+            var results = _ctx.Content.Select(x => new ContentModel() { Key = x.Key, Group = x.Group, Value = x.Value }).ToList();
             return results;
         }
     }
