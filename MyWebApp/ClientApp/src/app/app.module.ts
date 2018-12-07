@@ -13,6 +13,7 @@ import { WorkExpComponent } from './work-exp/work-exp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { SkillComponent } from './skills/skill.component';
+import { ContentService } from './content.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { SkillComponent } from './skills/skill.component';
       { path: 'skill', component: SkillComponent }
     ])
   ],
-  providers: [],
+  providers: [ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
