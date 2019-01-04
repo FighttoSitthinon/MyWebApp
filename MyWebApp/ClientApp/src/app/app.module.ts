@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -15,6 +15,11 @@ import { ContactComponent } from './contact/contact.component';
 import { SkillComponent } from './skills/skill.component';
 import { ContentService } from './content.service';
 import { AboutComponent } from './about-web/about-web.component';
+
+//เรียกใช้ Service
+export function app_InitContent(appService: ContentService) {
+  return () => appService.getContents();
+}
 
 @NgModule({
   declarations: [
@@ -42,7 +47,11 @@ import { AboutComponent } from './about-web/about-web.component';
       { path: 'about-web', component: AboutComponent }
     ])
   ],
-  providers: [ContentService],
+  providers: [
+    //Set ให้ Sevice ถูกเรียกก่อนที่จะเริ่มการทำงาน
+    ContentService,
+    { provide: APP_INITIALIZER, useFactory: app_InitContent, deps: [ContentService], multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

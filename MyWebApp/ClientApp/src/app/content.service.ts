@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ContentService {
-  
-  contents: dataContents[];
+
+  //static contents: dataContents[];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private _baseUrl: string) { }
 
   getContents(): any {
     this.http.get<dataContents[]>(this._baseUrl + 'api/Contents/Content/All').subscribe(result => {
-      this.contents = result;
+      console.log(result);
       return result;
     }, error => { console.log(error); });
   }

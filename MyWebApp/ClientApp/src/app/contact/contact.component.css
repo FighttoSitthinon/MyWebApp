@@ -1,0 +1,8 @@
+img{
+  margin:10px;
+}
+  img:hover {
+    width: 120px;
+    overflow: auto;
+    transition-duration: 0.2s;
+  }
