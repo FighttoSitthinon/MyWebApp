@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-p {
-  font-size:20px;
+.loadPage {
+  color: cornflowerblue;
+  font-style: inherit;
+  animation: loadPageAnimation1 0.5s infinite;
 }
+
+@keyframes loadPageAnimation1{
+  25% {
+    color: lightpink;
+  }
+  75% {
+    color: cornflowerblue;
+  }
+}
+ 

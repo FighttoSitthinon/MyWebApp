@@ -1,54 +1,60 @@
 <div class='main-nav'>
-    <div class='navbar navbar-inverse'>
-        <div class='navbar-header'>
-            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>This is Fightto - Kun Website :)</a>
-        </div>
-        <div class='clearfix'></div>
-        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
-          <ul class='nav navbar-nav'>
-            <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-              <a [routerLink]='["/"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-home'></span> Home
-              </a>
-            </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/profile"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-user'></span> Profile
-              </a>
-            </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/work-exp"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-education'></span> Work Experience
-              </a>
-            </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/skill"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-pushpin'></span> Skill
-              </a>
-            </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/contact"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-send'></span> Contact
-              </a>
-            </li>
-
-            <!--<li [routerLinkActive]='["link-active"]'>
-    <a [routerLink]='["/counter"]' (click)='collapse()'>
-      <span class='glyphicon glyphicon-education'></span> Counter
-    </a>
-  </li>
-  <li [routerLinkActive]='["link-active"]'>
-    <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
-      <span class='glyphicon glyphicon-th-list'></span> Fetch data
-    </a>
-  </li>-->
-          </ul>
-        </div>
+  <div class='navbar navbar-inverse'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' [routerLink]='["/"]'>This is Fightto - Kun Website :)</a>
     </div>
+    <div class='clearfix'></div>
+    <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+      <ul class='nav navbar-nav'>
+        <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+          <a [routerLink]='["/"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-home'></span> Home
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/profile"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-user'></span> Profile
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/work-exp"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-education'></span> Work Experience
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/skill"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-pushpin'></span> Skill
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/contact"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-send'></span> Contact Me
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/about-web"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-wrench'></span> About this web
+          </a>
+        </li>
+
+
+        <!--<li [routerLinkActive]='["link-active"]'>
+      <a [routerLink]='["/counter"]' (click)='collapse()'>
+        <span class='glyphicon glyphicon-education'></span> Counter
+      </a>
+    </li>
+    <li [routerLinkActive]='["link-active"]'>
+      <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
+        <span class='glyphicon glyphicon-th-list'></span> Fetch data
+      </a>
+    </li>-->
+      </ul>
+    </div>
+  </div>
 </div>

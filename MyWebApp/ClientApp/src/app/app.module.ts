@@ -14,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { SkillComponent } from './skills/skill.component';
 import { ContentService } from './content.service';
+import { AboutComponent } from './about-web/about-web.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContentService } from './content.service';
     WorkExpComponent,
     ProfileComponent,
     ContactComponent,
-    SkillComponent
+    SkillComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,7 +38,8 @@ import { ContentService } from './content.service';
       { path: 'work-exp', component: WorkExpComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'skill', component: SkillComponent }
+      { path: 'skill', component: SkillComponent },
+      { path: 'about-web', component: AboutComponent }
     ])
   ],
   providers: [ContentService],

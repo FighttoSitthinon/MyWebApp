@@ -57,12 +57,12 @@ namespace MyWebApp
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseMvc();
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller}/{action=Index}/{id?}");
-            //});
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action=Index}/{id?}");
+            });
 
             app.UseSwagger();
             app.UseSwaggerUI(x => {

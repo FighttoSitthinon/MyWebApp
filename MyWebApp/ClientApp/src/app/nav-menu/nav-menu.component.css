@@ -6,7 +6,8 @@ li .glyphicon {
 li.link-active a,
 li.link-active a:hover,
 li.link-active a:focus {
-    background-color: rgba(41, 219, 215, 0.83);
+    /*background-color: rgba(41, 219, 215, 0.83);*/
+    background-color:lightpink;
     color: white;
 }
 
@@ -31,13 +32,23 @@ li.link-active a:focus {
     border-width: 0px;
     height: 100%;
     background-color: #353535;
+    font-size: 18px;
   }
 
   .navbar-header {
     float: none;
-    padding: 10px;
+    padding: 20px  0px 20px 20px;
     background-color: rgba(29, 29, 29, 0.57);
+    color: palevioletred;
+    border-bottom: 1.5px solid white;
   }
+
+    .navbar-header :hover {
+      font-size: 20px;
+      color: lightpink;
+      padding: 18px 0px 20px 9px;
+      transition-duration: 0.2s;
+    }
 
   .navbar-collapse {
     border-top: 1px solid #444;
@@ -46,18 +57,29 @@ li.link-active a:focus {
 
   .navbar ul {
     float: none;
+    padding-top:10px;
   }
 
   .navbar li {
     float: none;
-    font-size: 16px;
-    margin: 6px;
+    margin: 10px;
   }
 
     .navbar li a {
-      padding: 20px 18px;
-      border-radius: 4px;
+      padding: 18px;
+      border-radius: 10px 50px 50px 10px;
+      border: 1.5px solid white;
+      color:white;
     }
+
+      .navbar li a:hover {
+        padding: 25px;
+        font-size: 25px;
+        border-radius: 10px 50px 50px 10px;
+        background-color: white;
+        color: palevioletred;
+        transition-duration: 0.2s;
+      }
 
   .navbar a {
     /* If a menu item's text is too long, truncate it */
@@ -65,5 +87,6 @@ li.link-active a:focus {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 18px;
   }
 }
