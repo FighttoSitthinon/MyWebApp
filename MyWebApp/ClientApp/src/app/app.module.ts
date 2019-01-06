@@ -16,10 +16,10 @@ import { SkillComponent } from './skills/skill.component';
 import { ContentService } from './content.service';
 import { AboutComponent } from './about-web/about-web.component';
 
-//เรียกใช้ Service
-export function app_InitContent(appService: ContentService) {
-  return () => appService.getContents();
-}
+////เรียกใช้ Service
+//export function app_InitContent(appService: ContentService) {
+//  return () => appService.getContents();
+//}
 
 @NgModule({
   declarations: [
@@ -48,9 +48,10 @@ export function app_InitContent(appService: ContentService) {
     ])
   ],
   providers: [
-    //Set ให้ Sevice ถูกเรียกก่อนที่จะเริ่มการทำงาน
-    ContentService,
-    { provide: APP_INITIALIZER, useFactory: app_InitContent, deps: [ContentService], multi: true }
+    ContentService
+    ////Set ให้ Sevice ถูกเรียกก่อนที่จะเริ่มการทำงาน
+    //ContentService,
+    //{ provide: APP_INITIALIZER, useFactory: app_InitContent, deps: [ContentService], multi: true }
   ],
   bootstrap: [AppComponent]
 })

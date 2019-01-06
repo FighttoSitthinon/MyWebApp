@@ -26,5 +26,12 @@ namespace MyWebApp.Controllers
         {
             return _ContentService.GetAllContent();
         }
+
+        [HttpGet]
+        [Route("ProfileContent")]
+        public ContentModel GetProfileContent()
+        {
+            return _ContentService.GetProfileContent();
+        }
     }
 }
