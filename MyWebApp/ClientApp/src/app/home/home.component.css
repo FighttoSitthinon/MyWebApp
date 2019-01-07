@@ -1,0 +1,12 @@
+.title-content {
+  font-weight: 700;
+  color: #504f54;
+  margin: 0 0 10px;
+  padding-top: 7px;
+}
+
+p, div{
+  font-size: 25px;
+  color: #504f54;
+}
+

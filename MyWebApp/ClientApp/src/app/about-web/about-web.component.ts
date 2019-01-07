@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ContentService } from '../content.service';
 
 @Component({
   selector: 'app-about-web',

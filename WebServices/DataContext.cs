@@ -17,6 +17,7 @@ namespace WebService
 
         //Variable Name must be like Table Name in Database
         public virtual DbSet<ContentModel> Content { get; set; }
+        public virtual DbSet<WorkExpModel> WorkExp { get; set; }
 
 
         // Unable to generate entity type for table 'dbo.Persons'. Please see the warning messages.

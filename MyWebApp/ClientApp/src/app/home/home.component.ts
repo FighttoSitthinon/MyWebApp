@@ -1,31 +1,23 @@
-import { Component, Inject, APP_INITIALIZER } from '@angular/core';
-import { ContentService } from '../content.service';
+import { Component } from '@angular/core';
+import { ContentService } from '../service/content.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 
 export class HomeComponent {
+  constructor(private _contentService: ContentService) { }
 
-  //contents: dataContents[];
-
-  //constructor(private _content: ContentService) {
-  //  let promise = new Promise((resolve, reject) => {
-  //    this.contents = this._content.getContents();
-  //    resolve();
-  //  });
-  //  promise.then(x => console.log(this.contents));
-  //}
-
-  //constructor(@Inject('AppContent') appContent: dataContents[]) {
-  //  console.log(appContent);
-  //}
-
+  content = {};
 
   ngOnInit() {
-    console.log("Hi");
+
+    this._contentService.getIntro().subscribe(response => {
+      this.content = response;
+    }, error => { console.log(error); });
+
   }
-  
 }
 

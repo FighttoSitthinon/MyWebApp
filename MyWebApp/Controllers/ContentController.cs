@@ -29,9 +29,23 @@ namespace MyWebApp.Controllers
 
         [HttpGet]
         [Route("ProfileContent")]
-        public ContentModel GetProfileContent()
+        public List<ContentModel> GetProfileContent()
         {
             return _ContentService.GetProfileContent();
+        }
+
+        [HttpGet]
+        [Route("Intro")]
+        public ContentModel GetIntro()
+        {
+            return _ContentService.GetIntro();
+        }
+
+        [HttpGet]
+        [Route("WorkExp")]
+        public List<WorkExpModel> GetWorkExp()
+        {
+            return _ContentService.GetWorkExp();
         }
     }
 }

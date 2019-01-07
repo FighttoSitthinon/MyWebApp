@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ContentService } from '../content.service';
-import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { ContentService } from '../service/content.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,13 +12,17 @@ export class ProfileComponent {
   constructor(private _contentService: ContentService) { }
 
   title = "";
-  profileContent = [];
+  profileContent = {};
+  content = [];
  
   ngOnInit() {
     this.title = "Sitthinon Chanaritthichai";
 
     this._contentService.getProfileContent().subscribe(response => {
-      this.profileContent = response;
+      this.profileContent = response.filter(item => item.key == 'Profile')[0];
+      this.content = response.filter(item => item.key != 'Profile');
+      console.log(this.profileContent);
     }, error => { console.log(error); });
+
   }
 }

@@ -11,7 +11,11 @@ namespace WebServices.Services
     {
         List<ContentModel> GetAllContent();
 
-        ContentModel GetProfileContent();
+        List<ContentModel> GetProfileContent();
+
+        ContentModel GetIntro();
+
+        List<WorkExpModel> GetWorkExp();
     }
     public class ContentService : IContentService
     {
@@ -28,9 +32,21 @@ namespace WebServices.Services
             return results;
         }
 
-        public ContentModel GetProfileContent()
+        public List<ContentModel> GetProfileContent()
         {
-            var results = _ctx.Content.Where(x=> x.Key.Equals("Profile") && x.Group.Equals(Const.Const.Content)).FirstOrDefault();
+            var results = _ctx.Content.Where(x=> x.Group.Equals(Const.Const.Content)).ToList();
+            return results;
+        }
+
+        public ContentModel GetIntro()
+        {
+            var result = _ctx.Content.Where(x => x.Group.Equals(Const.Const.Intro)).FirstOrDefault();
+            return result;
+        }
+
+        public List<WorkExpModel> GetWorkExp()
+        {
+            var results = _ctx.WorkExp.ToList();
             return results;
         }
     }

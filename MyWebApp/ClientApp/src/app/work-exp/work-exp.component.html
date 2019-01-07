@@ -6,47 +6,16 @@
 <div class="row">
     <div class="col-md-12">
       <div class="main-timeline8">
-        <div class="timeline">
+        <div class="timeline" *ngFor="let item of content">
           <span class="timeline-icon"></span>
-          <span class="year">June 2018 – Nov 2018 </span>
+          <span class="year">{{item.timeline}}</span>
           <div class="timeline-content">
-            <h3 class="title">Internship and Cooperative Education</h3>
+            <h3 class="title">{{item.title}}</h3>
             <p class="description">
-              Has been joined Internship and cooperative Education program at IT One Co. Ltd. in the position .Net Developer.
+              {{item.description}}
             </p>
           </div>
         </div>
-        <div class="timeline">
-          <span class="timeline-icon"></span>
-          <span class="year">June 2017 – July 2017 </span>
-          <div class="timeline-content">
-            <h3 class="title">Microsoft Innovation Center 2017</h3>
-            <p class="description">
-              Has been joined in Microsoft Innovation Center 2017 program at Microsoft (Thailand) Limited in the position .Net Developer.
-            </p>
-          </div>
-        </div>
-        <div class="timeline">
-          <span class="timeline-icon"></span>
-          <span class="year">March 2015 – July 2015 </span>
-          <div class="timeline-content">
-            <h3 class="title">Part-Time</h3>
-            <p class="description">
-              Has been worked part-time at Swensen’s Fortune Tower.
-            </p>
-          </div>
-        </div>
-        <div class="timeline">
-          <span class="timeline-icon"></span>
-          <span class="year">February 2013 – October 2014 </span>
-          <div class="timeline-content">
-            <h3 class="title">Part-Time</h3>
-            <p class="description">
-              Has been worked part-time at Sizzler Central Plaza Grand Rama 9.
-            </p>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>

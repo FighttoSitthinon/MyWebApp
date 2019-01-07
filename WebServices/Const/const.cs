@@ -5,6 +5,7 @@ namespace WebServices.Const
 	{
         public static string Title = "Title";
         public static string Content = "Content";
-        
+        public static string Intro = "Intro";
+
     }
 }
