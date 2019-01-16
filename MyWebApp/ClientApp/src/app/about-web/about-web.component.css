@@ -1,0 +1,15 @@
+.confImg{
+  margin:10px;
+}
+  .confImg:hover {
+    width: 230px;
+    overflow: auto;
+    transition-duration: 0.2s;
+  }
+
+.confImg2 {
+  text-decoration: none;
+  font-size: 50px;
+  color: black;
+}
+
