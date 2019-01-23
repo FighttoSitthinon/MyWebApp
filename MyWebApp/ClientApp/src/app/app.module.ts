@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-//import { CounterComponent } from './counter/counter.component';
-//import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { WorkExpComponent } from './work-exp/work-exp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
@@ -26,8 +24,6 @@ import { AboutComponent } from './about-web/about-web.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    //CounterComponent,
-   // FetchDataComponent,
     WorkExpComponent,
     ProfileComponent,
     ContactComponent,
@@ -48,11 +44,15 @@ import { AboutComponent } from './about-web/about-web.component';
     ])
   ],
   providers: [
-    ContentService
-    ////Set ให้ Sevice ถูกเรียกก่อนที่จะเริ่มการทำงาน
+    ContentService // Dependency Injection แบบปกติ
+
+    ////ถ้าจะ Set ให้ Sevice ถูกเรียกก่อนที่จะเริ่มการทำงาน
     //ContentService,
     //{ provide: APP_INITIALIZER, useFactory: app_InitContent, deps: [ContentService], multi: true }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// วิธีในการเพิ่ม Component / Service ใน CLI
+// component  => ng g c __Name__
+// service    => ng g s __Name__
